@@ -1,0 +1,8 @@
+<!-- src/views/companies/index.handlebars -->
+  <h2>{{pageTitle}}</h2>
+  <ul>
+    {{#each companies}}
+      <li>{{this.name}} - {{this.address}}</li>
+    {{/each}}
+  </ul>
+  <a href="/companies/new">Add New Company</a>

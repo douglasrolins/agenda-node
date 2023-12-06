@@ -1,0 +1,11 @@
+<!-- src/views/companies/new.handlebars -->
+  <h2>{{pageTitle}}</h2>
+  <form action="/companies/new" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
