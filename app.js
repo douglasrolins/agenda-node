@@ -7,7 +7,16 @@ const app = express();
 const port = 3000;
 
 // Banco de dados
-const db = require('./src/database/db'); 
+const dbType = process.env.DB_TYPE || 'postgres';
+
+if (dbType === 'mysql') {
+  const db = require('./src/database/db_mysql');
+} else if (dbType === 'postgres') {
+  const db = require('./src/database/db_postgres');
+} else {
+  console.error('Tipo de banco de dados não suportado:', dbType);
+  process.exit(1);
+}
 
 // Configurar o mecanismo de template Handlebars
 app.engine('handlebars', exphbs());
